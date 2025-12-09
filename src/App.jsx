@@ -7,6 +7,11 @@ import DramaClub from './pages/DramaClub';
 import ArtClub from './pages/ArtClub';
 import LiteratureClub from './pages/LiteratureClub';
 import PhotographyClub from './pages/PhotographyClub';
+import QuizClub from './pages/QuizClub';
+import FashionClub from './pages/FashionClub';
+import GamingClub from './pages/GamingClub';
+import SpecialsClub from './pages/SpecialsClub';
+import ExClubs from './pages/ExClubs';
 import Contact from './pages/Contact';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -33,6 +38,11 @@ function App() {
           <Route path="/art" element={<ArtClub />} />
           <Route path="/literature" element={<LiteratureClub />} />
           <Route path="/photography" element={<PhotographyClub />} />
+          <Route path="/quiz" element={<QuizClub />} />
+          <Route path="/fashion" element={<FashionClub />} />
+          <Route path="/gaming" element={<GamingClub />} />
+          <Route path="/specials" element={<SpecialsClub />} />
+          <Route path="/more-clubs" element={<ExClubs />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Layout>

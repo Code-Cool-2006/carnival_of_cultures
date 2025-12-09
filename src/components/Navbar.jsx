@@ -37,12 +37,15 @@ const Navbar = () => {
     <nav style={navStyles}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Link to="/" style={{ fontSize: '1.5rem', fontWeight: 800, fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <span style={{ color: 'var(--accent-primary)' }}>KLS Gogte Institute of Tecnology</span>Cultural Club
+          <img src='src/assets/KLS.png' height='90px' width='90px'></img>
+          <img src='src/assets/GIT.png'height='90px' width='90px'></img>
+          <span style={{ color: 'var(--accent-primary)' }}>KLS GIT</span>Cultural Clubs
         </Link>
         
         {/* Desktop Menu */}
-        <div className="desktop-menu" style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+        <div className="desktop-menu" style={{ gap: '2rem', alignItems: 'center' }}>
           <Link to="/" className="nav-link">Home</Link>
+          <Link to="/more-clubs" className="nav-link">More Clubs</Link>
           <Link to="/contact" className="nav-link">Contact</Link>
           <Link to="/contact" style={{ 
             padding: '0.5rem 1.5rem', 
@@ -77,6 +80,7 @@ const Navbar = () => {
           zIndex: 999
         }}>
           <Link to="/" style={{ fontSize: '1.5rem', fontWeight: 600 }}>Home</Link>
+          <Link to="/more-clubs" style={{ fontSize: '1.5rem', fontWeight: 600 }}>More Clubs</Link>
           <Link to="/contact" style={{ fontSize: '1.5rem', fontWeight: 600 }}>Contact</Link>
         </div>
       )}

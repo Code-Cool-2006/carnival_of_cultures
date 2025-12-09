@@ -148,7 +148,75 @@ ul {
   animation: slideUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
+
 .delay-1 { animation-delay: 0.1s; }
 .delay-2 { animation-delay: 0.2s; }
 .delay-3 { animation-delay: 0.3s; }
 
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  /* Global Adjustments */
+  html {
+    font-size: 14px; /* Scale down base font size slightly */
+  }
+  
+  #root {
+    padding: 1rem;
+  }
+
+  /* Navbar specific */
+  .desktop-menu {
+    display: none !important;
+  }
+  
+  .mobile-toggle {
+    display: block !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-toggle {
+    display: none !important;
+  }
+  
+  .desktop-menu {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .club-card {
+    margin-bottom: 1rem;
+  }
+}
+
+
+/* Animation Utilities */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.hover-scale {
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.pulse {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(219, 39, 119, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0); }
+}
