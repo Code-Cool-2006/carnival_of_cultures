@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Music, Move, Drama, Palette, BookOpen, Camera, Brain, ArrowRight, Circle, Scissors, Gamepad2, Star } from 'lucide-react';
 import heroImg from '../assets/hero_illustration.png';
 import useScrollAnimation from '../hooks/useScrollAnimation';
+import './Home.css';
 
 const FadeInSection = ({ children }) => {
   const [domRef, isVisible] = useScrollAnimation();
@@ -106,7 +107,7 @@ const clubs = [
 
 const Home = () => {
   return (
-    <div style={{ position: 'relative', overflow: 'hidden' }}>
+    <div className="home-container">
       {/* Background Blobs */}
       <div className="bg-pattern"></div>
       <div className="blob blob-1"></div>
@@ -114,117 +115,69 @@ const Home = () => {
       <div className="blob blob-3"></div>
 
       {/* Hero Section */}
-      <section style={{ 
-        minHeight: '90vh', 
-        display: 'flex', 
-        alignItems: 'center', 
-        justifyContent: 'center', 
-        textAlign: 'center',
-        padding: '2rem',
-        position: 'relative',
-        zIndex: 1
-      }}>
-        <div style={{ maxWidth: '1200px', width: '100%', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', alignItems: 'center', gap: 'clamp(2rem, 5vw, 4rem)', textAlign: 'left' }}>
+      <section className="home-hero">
+        <div className="hero-content">
           
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <h1 className="animate-slide-up delay-1" style={{ fontSize: 'clamp(3rem, 6vw, 5rem)', marginBottom: '0.5rem', background: 'linear-gradient(to right, #db2777, #f97316)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontWeight: 800, lineHeight: 1.1 }}>
+          <div className="hero-text-container">
+            <h1 className="hero-title animate-slide-up delay-1">
               Carnival of Cultures
             </h1>
-            <h3 className="animate-slide-up delay-1" style={{ fontSize: 'clamp(1.5rem, 3vw, 2.5rem)', marginBottom: '1.5rem', color: 'var(--text-secondary)', fontWeight: 700 }}>
+            <h3 className="hero-subtitle animate-slide-up delay-1">
               KLS Gogte Institute of Technology
             </h3>
-            <p className="animate-slide-up delay-2" style={{ fontSize: 'clamp(1.1rem, 1.5vw, 1.3rem)', color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '540px', lineHeight: 1.6 }}>
+            <p className="hero-description animate-slide-up delay-2">
               Where diversity creates harmony. Explore a world of art, music, and expression in our vibrant community.
             </p>
-            <a href="#clubs" className="animate-slide-up delay-3" style={{ 
-              padding: '1rem 3rem', 
-              background: 'linear-gradient(to right, #db2777, #f97316)', 
-              color: '#fff', 
-              borderRadius: '50px', 
-              fontWeight: 700,
-              fontSize: '1.1rem',
-              display: 'inline-block',
-              boxShadow: '0 10px 30px -10px rgba(219, 39, 119, 0.5)',
-              transform: 'translateY(0)',
-              transition: 'all 0.3s'
-            }}>
+            <a href="#clubs" className="join-button animate-slide-up delay-3">
               Join a Community
             </a>
           </div>  
 
-          <div className="animate-slide-up" style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
-            <img src={heroImg} alt="Carnival of Cultures" style={{ width: '100%', maxWidth: '600px', height: 'auto', filter: 'drop-shadow(0 0 50px rgba(244, 63, 94, 0.3))' }} />
+          <div className="hero-image-container animate-slide-up">
+            <img src={heroImg} alt="Carnival of Cultures" className="hero-image" />
           </div>
 
         </div>
       </section>
 
+      {/* About Section */}
+      <section className="home-about-section">
+        <div className="home-about-container">
+          <h2 className="home-about-title">About the Carnival</h2>
+          <div className="home-about-text">
+            <p>
+              The Carnival of Cultures at KLS GIT is more than just a festival; it's a celebration of the vibrant tapestry that makes our institute unique. We bring together diverse talents, traditions, and innovative spirits to create a platform for expression and connection.
+            </p>
+            <p>
+              From the rhythmic beats of Nrityom to the intellectual challenges of the Quiz Club, every society contributes to the holistic development of our students, fostering creativity, leadership, and camaraderie.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Clubs Grid */}
-      <section id="clubs" style={{ padding: 'clamp(3rem, 8vw, 6rem) 1.5rem', position: 'relative', zIndex: 1, background: 'rgba(255, 255, 255, 0.5)', backdropFilter: 'blur(20px)' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '3rem', marginBottom: '4rem', color: 'var(--text-primary)' }}>Our Communities</h2>
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
-          gap: '2.5rem',
-          maxWidth: '1200px',
-          margin: '0 auto'
-        }}>
+      <section id="clubs" className="clubs-section">
+        <h2 className="clubs-title">Our Communities</h2>
+        <div className="clubs-grid">
           {clubs.map((club) => {
             const Icon = iconMap[club.icon] || Circle; // Fallback
             return (
               <FadeInSection key={club.id}>
-              <Link to={`/${club.id}`} className="club-card hover-scale" style={{ 
-                background: 'var(--bg-secondary)', 
-                borderRadius: '24px', 
-                overflow: 'hidden',
-                textDecoration: 'none',
-                transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-                display: 'flex',
-                flexDirection: 'column',
-                height: '100%',
-                border: '1px solid rgba(0,0,0,0.05)',
-                position: 'relative',
-                boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-              }}>
-                <div style={{ 
-                  position: 'absolute', 
-                  top: 0, 
-                  left: 0, 
-                  width: '100%', 
-                  height: '6px', 
-                  background: club.gradient 
-                }}></div>
+              <Link to={`/${club.id}`} className="club-card">
+                <div className="club-card-top-border" style={{ background: club.gradient }}></div>
                 
-                <div style={{ padding: '2.5rem', flex: 1 }}>
-                  <div style={{ 
-                    width: '70px', 
-                    height: '70px', 
-                    borderRadius: '20px', 
-                    background: club.gradient,
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center',
-                    marginBottom: '1.5rem',
-                    color: '#fff', 
-                    boxShadow: '0 10px 20px -5px rgba(0,0,0,0.1)'
-                  }}>
+                <div className="club-card-content">
+                  <div className="club-icon-box" style={{ background: club.gradient }}>
                     <Icon size={36} />
                   </div>
-                  <h3 style={{ fontSize: '2rem', marginBottom: '0.75rem', fontWeight: 700, color: 'var(--text-primary)' }}>{club.name}</h3>
-                  <p style={{ color: 'var(--text-secondary)', lineHeight: '1.7', fontSize: '1.1rem' }}>{club.shortDescription}</p>
+                  <h3 className="club-name">{club.name}</h3>
+                  <p className="club-description">{club.shortDescription}</p>
                 </div>
-                <div style={{ 
-                  padding: '1.5rem 2.5rem', 
-                  borderTop: '1px solid rgba(0,0,0,0.05)', 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  justifyContent: 'space-between',
-                  gap: '0.5rem', 
-                  color: 'var(--text-primary)',
-                  fontWeight: 600,
-                  background: 'rgba(0,0,0,0.02)'
-                }}>
-                  View Details <div style={{ background: 'var(--text-primary)', color: '#fff', borderRadius: '50%', width: '30px', height: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><ArrowRight size={16} /></div>
+                <div className="club-card-footer">
+                  View Details 
+                  <div className="arrow-icon-circle">
+                    <ArrowRight size={16} />
+                  </div>
                 </div>
               </Link>
               </FadeInSection>

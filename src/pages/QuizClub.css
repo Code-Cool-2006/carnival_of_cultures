@@ -1,0 +1,213 @@
+/* Page Layout */
+.club-page-container {
+  padding-bottom: 4rem;
+  background: var(--bg-primary);
+  min-height: 100vh;
+  color: var(--text-primary);
+}
+
+.club-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero Section */
+.club-hero {
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  position: relative;
+  margin-bottom: 4rem;
+}
+
+.back-link {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
+  backdrop-filter: blur(5px);
+  transition: background 0.2s;
+}
+
+.back-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.club-title-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.club-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+}
+
+.club-tagline {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+}
+
+/* Section Common */
+.section-common {
+  margin-bottom: 6rem;
+}
+
+.section-title {
+  margin-bottom: 3rem;
+  padding-left: 1rem;
+  border-left-width: 6px;
+  border-left-style: solid;
+  font-size: 2.5rem;
+}
+
+/* About Section */
+.about-section {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-title {
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.about-image-container {
+  flex: 1;
+  min-width: 280px;
+  height: 300px;
+  background: var(--bg-secondary);
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Events Grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.event-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+.event-icon-box {
+  margin-bottom: 1rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.event-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.event-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+}
+
+/* Members Grid */
+.members-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.member-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: var(--card-bg);
+  padding: 1rem 2rem 1rem 1rem;
+  border-radius: 100px;
+  border: 1px solid var(--border-color);
+  transition: transform 0.2s;
+}
+
+.member-card:hover {
+  transform: scale(1.02);
+}
+
+.member-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.member-name {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.member-role {
+  margin: 0;
+  color: var(--accent-primary);
+  font-size: 0.9rem;
+}
+
+.member-contacts {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.contact-icon {
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.contact-icon:hover {
+  color: var(--accent-primary);
+}

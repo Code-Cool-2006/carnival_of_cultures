@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
+import klsLogo from '../assets/KLS.png';
+import gitLogo from '../assets/GIT.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,15 +32,15 @@ const Navbar = () => {
     background: scrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent',
     backdropFilter: scrolled ? 'blur(10px)' : 'none',
     borderBottom: scrolled ? '1px solid rgba(0, 0, 0, 0.05)' : 'none',
-    padding: scrolled ? '1rem 2rem' : '1.5rem 2rem'
+    padding: scrolled ? '0.5rem 2rem' : '1rem 2rem'
   };
 
   return (
     <nav style={navStyles}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <Link to="/" style={{ fontSize: '1.5rem', fontWeight: 800, fontFamily: 'var(--font-heading)', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <img src='src/assets/KLS.png' height='90px' width='90px'></img>
-          <img src='src/assets/GIT.png'height='90px' width='90px'></img>
+          <img src={klsLogo} alt="KLS Logo" height='50px' width='auto' />
+          <img src={gitLogo} alt="GIT Logo" height='50px' width='auto' />
           <span style={{ color: 'var(--accent-primary)' }}>KLS GIT</span>Cultural Clubs
         </Link>
         

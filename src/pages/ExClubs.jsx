@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Users, Award, ExternalLink } from 'lucide-react';
+import './ExClubs.css';
 
 const ExClubs = () => {
   const [expandedId, setExpandedId] = useState(null);
@@ -63,78 +64,55 @@ const ExClubs = () => {
   ];
 
   return (
-    <div style={{ paddingBottom: '4rem', background: 'var(--bg-primary)', minHeight: '100vh', color: 'var(--text-primary)', paddingTop: '100px' }}>
+    <div className="exclubs-container">
       
-      <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 2rem' }}>
-        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, marginBottom: '1rem', background: 'linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>More Clubs at GIT</h1>
-          <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)' }}>Discover the diverse range of technical and social clubs contributing to our vibrant campus life.</p>
+      <div className="exclubs-wrapper">
+        <div className="exclubs-header">
+          <h1 className="exclubs-title">More Clubs at GIT</h1>
+          <p className="exclubs-subtitle">Discover the diverse range of technical and social clubs contributing to our vibrant campus life.</p>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+        <div className="exclubs-about-card">
+          <h2 className="exclubs-about-title">About Student Societies</h2>
+          <p className="exclubs-about-text">
+            Beyond our cultural flagships, GIT is home to numerous student chapters and societies that bridge the gap between academic learning and professional world. These bodies provide opportunities for technical skill-building, networking, and social responsibility. Whether you are interested in coding, debating, or community service, there is a place for you to grow.
+          </p>
+        </div>
+
+        <div className="clubs-list">
           {extraClubs.map((club) => (
-            <div key={club.id} style={{ 
-              background: 'var(--card-bg)', 
-              borderRadius: '20px', 
-              overflow: 'hidden',
-              boxShadow: '0 4px 6px -1px rgba(0,0,0,0.05)',
-              border: '1px solid var(--border-color)',
-              transition: 'all 0.3s ease'
-            }}>
+            <div key={club.id} className="club-accordion-item">
               <div 
                 onClick={() => toggleClub(club.id)}
-                style={{ 
-                  padding: '2rem', 
-                  cursor: 'pointer',
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  background: expandedId === club.id ? 'var(--bg-secondary)' : 'transparent'
-                }}
+                className={`club-accordion-header ${expandedId === club.id ? 'expanded' : ''}`}
               >
                 <div>
-                  <span style={{ 
-                    fontSize: '0.9rem', 
-                    fontWeight: 600, 
-                    color: 'var(--accent-primary)', 
-                    textTransform: 'uppercase', 
-                    letterSpacing: '0.5px',
-                    display: 'block',
-                    marginBottom: '0.5rem'
-                  }}>{club.category}</span>
-                  <h3 style={{ fontSize: '1.5rem', margin: 0 }}>{club.name}</h3>
+                  <span className="club-category-tag">{club.category}</span>
+                  <h3 className="club-accordion-title">{club.name}</h3>
                 </div>
                 {expandedId === club.id ? <ChevronUp size={24} color="var(--accent-primary)" /> : <ChevronDown size={24} color="var(--text-secondary)" />}
               </div>
 
               {expandedId === club.id && (
-                <div style={{ padding: '0 2rem 2rem 2rem', borderTop: '1px solid var(--border-color)', background: 'var(--bg-secondary)' }}>
-                  <p style={{ fontSize: '1.1rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '2rem', marginTop: '2rem' }}>
+                <div className="club-accordion-content">
+                  <p className="club-description-text">
                     {club.description}
                   </p>
                   
                   <div>
-                    <h4 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem', fontSize: '1.1rem' }}>
+                    <h4 className="council-section-title">
                       <Users size={20} color="var(--accent-primary)" />
                       Council Members
                     </h4>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1rem' }}>
+                    <div className="council-grid">
                       {club.council.map((member, index) => (
-                        <div key={index} style={{ 
-                          background: 'var(--card-bg)', 
-                          padding: '1rem', 
-                          borderRadius: '12px',
-                          border: '1px solid var(--border-color)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '1rem'
-                        }}>
-                          <div style={{ width: '40px', height: '40px', background: 'var(--bg-primary)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <div key={index} className="council-card">
+                          <div className="council-icon-circle">
                             <Award size={20} color="var(--accent-secondary)" />
                           </div>
                           <div>
-                            <div style={{ fontWeight: 700, fontSize: '1rem' }}>{member.name}</div>
-                            <div style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>{member.role}</div>
+                            <div className="council-member-name">{member.name}</div>
+                            <div className="council-member-role">{member.role}</div>
                           </div>
                         </div>
                       ))}
