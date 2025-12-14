@@ -84,6 +84,7 @@ const Navbar = () => {
         }}>
           <Link to="/" style={{ fontSize: '1.5rem', fontWeight: 600 }}>Home</Link>
           <Link to="/more-clubs" style={{ fontSize: '1.5rem', fontWeight: 600 }}>More Clubs</Link>
+          <Link to="/events" style={{ fontSize: '1.5rem', fontWeight: 600 }}>Events</Link>
           <Link to="/contact" style={{ fontSize: '1.5rem', fontWeight: 600 }}>Contact</Link>
         </div>
       )}
