@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
@@ -28,7 +29,7 @@ const Footer = () => {
               <li><a href="/" className="nav-link">Home</a></li>
               <li><a href="/#clubs" className="nav-link">Communities</a></li>
               <li><a href="/contact" className="nav-link">Contact Us</a></li>
-              <li><a href="#" className="nav-link">Events Schedule</a></li>
+              <li><Link to="/events" className="nav-link">Events Schedule</Link></li>
             </ul>
           </div>
 

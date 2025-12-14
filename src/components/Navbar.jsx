@@ -48,6 +48,7 @@ const Navbar = () => {
         <div className="desktop-menu" style={{ gap: '2rem', alignItems: 'center' }}>
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/more-clubs" className="nav-link">More Clubs</Link>
+          <Link to="/events" className="nav-link">Events</Link>
           <Link to="/contact" className="nav-link">Contact</Link>
           <Link to="/contact" style={{ 
             padding: '0.5rem 1.5rem', 
