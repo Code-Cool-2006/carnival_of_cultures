@@ -1,4 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import MusicClub from './pages/MusicClub';
@@ -14,10 +17,8 @@ import SpecialsClub from './pages/SpecialsClub';
 import ExClubs from './pages/ExClubs';
 import Contact from './pages/Contact';
 import Events from './pages/Events';
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 
-// Scroll to top on route change
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
