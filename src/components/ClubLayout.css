@@ -205,3 +205,35 @@
 .contact-icon:hover {
   color: var(--accent-primary);
 }
+
+.achievement-card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.achievement-icon-box {
+  padding: 0.8rem;
+  border-radius: 12px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.achievement-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.achievement-description {
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}

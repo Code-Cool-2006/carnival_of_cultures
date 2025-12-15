@@ -17,7 +17,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
@@ -44,7 +43,6 @@ const Navbar = () => {
           <span style={{ color: 'var(--accent-primary)' }}>KLS GIT</span>Cultural Clubs
         </Link>
         
-        {/* Desktop Menu */}
         <div className="desktop-menu" style={{ gap: '2rem', alignItems: 'center' }}>
           <Link to="/" className="nav-link">Home</Link>
           <Link to="/more-clubs" className="nav-link">More Clubs</Link>
@@ -60,13 +58,11 @@ const Navbar = () => {
           }}>Join Now</Link>
         </div>
 
-        {/* Mobile Toggle */}
         <button className="mobile-toggle" onClick={() => setIsOpen(!isOpen)} style={{ color: 'var(--text-primary)' }}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
       {isOpen && (
         <div style={{
           position: 'fixed',

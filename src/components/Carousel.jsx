@@ -16,7 +16,6 @@ const Carousel = ({ items }) => {
 
   return (
     <div style={{ position: 'relative', width: '100%', maxWidth: '800px', margin: '0 auto', aspectRatio: '16/9', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(0,0,0,0.2)' }}>
-      {/* Main Content */}
       <div style={{ width: '100%', height: '100%', background: '#000' }}>
         {items.map((item, index) => (
           <div
@@ -44,7 +43,6 @@ const Carousel = ({ items }) => {
         ))}
       </div>
 
-      {/* Controls */}
       <button 
         onClick={prevSlide}
         style={{
@@ -99,7 +97,6 @@ const Carousel = ({ items }) => {
         <ChevronRight size={30} />
       </button>
 
-      {/* Indicators */}
       <div style={{
         position: 'absolute',
         bottom: '20px',

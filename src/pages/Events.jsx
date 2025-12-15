@@ -3,7 +3,6 @@ import { Calendar, MapPin, Clock, Music, Move, Drama, Palette, BookOpen, Camera,
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import './Events.css';
 
-// Reusing FadeInSection for consistent animations
 const FadeInSection = ({ children, delay = 0 }) => {
   const [domRef, isVisible] = useScrollAnimation();
   return (

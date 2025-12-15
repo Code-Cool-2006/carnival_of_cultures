@@ -1,5 +1,5 @@
 .events-container {
-  padding-top: 4rem; /* Navbar space */
+  padding-top: 4rem;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
@@ -28,11 +28,10 @@
   margin: 0 auto;
 }
 
-/* Timeline Styles */
 .timeline-section {
   max-width: 800px;
   margin: 0 auto;
-  padding: 2rem 2rem 2rem 5rem; /* Left padding for line */
+  padding: 2rem 2rem 2rem 5rem;
   position: relative;
 }
 
@@ -59,7 +58,7 @@
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
   padding: 1.5rem;
-  width: 100%; /* Full width */
+  width: 100%;
   position: relative;
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -72,22 +71,20 @@
   border-color: var(--accent-primary);
 }
 
-/* Connector Dot */
 .event-connector {
   position: absolute;
-  left: -3rem; /* (5rem padding - 2rem line pos) = 3rem distance */
+  left: -3rem;
   top: 2rem;
   width: 20px;
   height: 20px;
   background: var(--bg-primary);
   border: 4px solid var(--accent-primary);
   border-radius: 50%;
-  transform: translateX(-50%); /* Center on the line */
+  transform: translateX(-50%);
   z-index: 2;
   box-shadow: 0 0 15px var(--accent-primary);
 }
 
-/* Content Styles */
 .event-date-badge {
   display: inline-block;
   padding: 0.25rem 0.75rem;
@@ -137,10 +134,9 @@
   gap: 0.4rem;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .timeline-section {
-    padding-left: 4rem; /* Slightly less padding on mobile */
+    padding-left: 4rem;
   }
   
   .timeline-line {

@@ -48,7 +48,6 @@ ul {
   list-style: none;
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }

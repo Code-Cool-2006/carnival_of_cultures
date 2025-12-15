@@ -108,13 +108,11 @@ const clubs = [
 const Home = () => {
   return (
     <div className="home-container">
-      {/* Background Blobs */}
       <div className="bg-pattern"></div>
       <div className="blob blob-1"></div>
       <div className="blob blob-2"></div>
       <div className="blob blob-3"></div>
 
-      {/* Hero Section */}
       <section className="home-hero">
         <div className="hero-content">
           
@@ -140,7 +138,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section */}
       <section className="home-about-section">
         <div className="home-about-container">
           <h2 className="home-about-title">About the Carnival</h2>
@@ -155,12 +152,11 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Clubs Grid */}
       <section id="clubs" className="clubs-section">
         <h2 className="clubs-title">Our Communities</h2>
         <div className="clubs-grid">
           {clubs.map((club) => {
-            const Icon = iconMap[club.icon] || Circle; // Fallback
+            const Icon = iconMap[club.icon] || Circle;
             return (
               <FadeInSection key={club.id}>
               <Link to={`/${club.id}`} className="club-card">
