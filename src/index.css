@@ -1,11 +1,11 @@
 :root {
   --bg-primary: #ffffff;
-  --bg-secondary: #fff7ed; /* Very light warm cream */
-  --text-primary: #3c0919; /* Dark maroon/brown text */
-  --text-secondary: #78350f; /* Brownish secondary */
-  --accent-primary: #db2777; /* Rani Pink */
-  --accent-secondary: #f97316; /* Saffron/Marigold */
-  --accent-tertiary: #16a34a; /* Parrot Green */
+  --bg-secondary: #fff7ed; 
+  --text-primary: #3c0919; 
+  --text-secondary: #78350f; 
+  --accent-primary: #db2777; 
+  --accent-secondary: #f97316; 
+  --accent-tertiary: #16a34a; 
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
   --transition: all 0.3s ease;
@@ -65,7 +65,7 @@ ul {
 
 .club-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 0 50px -10px var(--accent-secondary); /* Neon glow */
+  box-shadow: 0 0 50px -10px var(--accent-secondary); 
   border: 1px solid rgba(255,255,255,0.3);
 }
 .nav-link {
@@ -107,8 +107,8 @@ ul {
   position: absolute;
   filter: blur(80px);
   z-index: -1;
-  opacity: 0.5; /* Increased opacity for more color */
-  mix-blend-mode: screen; /* Brighter blending */
+  opacity: 0.5; 
+  mix-blend-mode: screen; 
   animation: float 10s ease-in-out infinite;
 }
 
@@ -121,15 +121,15 @@ ul {
 
 .bg-pattern {
   background-image: url('./assets/bg_pattern.png');
-  background-size: 400px; /* Adjust size */
+  background-size: 400px; 
   background-repeat: repeat;
-  opacity: 0.05; /* Extremely subtle */
+  opacity: 0.05; 
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -2; /* Behind blobs */
+  z-index: -2; 
   pointer-events: none;
 }
 
@@ -153,18 +153,15 @@ ul {
 .delay-2 { animation-delay: 0.2s; }
 .delay-3 { animation-delay: 0.3s; }
 
-/* Responsive Media Queries */
 @media (max-width: 768px) {
-  /* Global Adjustments */
   html {
-    font-size: 14px; /* Scale down base font size slightly */
+    font-size: 14px; 
   }
   
   #root {
     padding: 1rem;
   }
 
-  /* Navbar specific */
   .desktop-menu {
     display: none !important;
   }
@@ -191,7 +188,6 @@ ul {
 }
 
 
-/* Animation Utilities */
 .fade-in-section {
   opacity: 0;
   transform: translateY(20px);
